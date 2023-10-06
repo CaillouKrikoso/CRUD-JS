@@ -54,4 +54,11 @@ export class CRUD {
     readAll() {
         return this.#data;
     }
+
+    update(id, data) {
+        this.#checkThatElementExistsWithId(id);
+        this.#data[id] = data;
+        this.#save();
+        return true;
+    }
 }
